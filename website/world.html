@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS - World Archives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="world-style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="world-nav glass-card">
+        <a href="index.html#world" class="back-link">← Return to Map</a>
+        <h1 class="world-header-title">WORLD ARCHIVES</h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="world-container">
+        <!-- Sidebar Navigation -->
+        <aside class="nation-sidebar glass-card">
+            <h3>NATIONS</h3>
+            <ul id="nation-list">
+                <!-- Javascript will populate this -->
+            </ul>
+            <h3 class="sidebar-section-header cosmic-section">✦ COSMIC CONTEXT</h3>
+            <ul id="cosmic-list">
+                <!-- Javascript will populate this -->
+            </ul>
+        </aside>
+
+        <!-- Main Content (Nation Details) -->
+        <main class="nation-details glass-card" id="detail-area">
+            <header class="nation-header">
+                <h2 id="nation-name">SELECT A NATION</h2>
+                <div id="nation-flag-bar"></div>
+            </header>
+
+            <div class="nation-body hidden" id="nation-content-wrapper">
+                <!-- Top Section: Stats & Leader -->
+                <div class="top-row">
+                    <div class="stats-card glass-card inner-card">
+                        <h4>NATIONAL POWER</h4>
+                        <div class="stat-bars" id="stat-bars">
+                            <!-- JS injects stats here -->
+                        </div>
+                    </div>
+
+                    <div class="economic-card glass-card inner-card">
+                        <h4>ECONOMIC & GEOGRAPHIC DATA</h4>
+                        <div class="economic-info" id="economic-info">
+                            <!-- JS injects economic data here -->
+                        </div>
+                    </div>
+
+                    <div class="leader-card glass-card inner-card">
+                        <h4>LEADER PROFILE</h4>
+                        <div class="leader-content">
+                            <div class="leader-img-wrapper">
+                                <img id="leader-img" src="" alt="Leader">
+                            </div>
+                            <div class="leader-info">
+                                <h5 id="leader-name">Name</h5>
+                                <p id="leader-role">Role</p>
+                                <p id="leader-desc">Description...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Lore (Tabs or Scroll) -->
+                <div class="lore-section glass-card inner-card">
+                    <div class="lore-tabs">
+                        <button class="tab-btn active" data-tab="history">HISTORY</button>
+                        <button class="tab-btn" data-tab="culture">CULTURE</button>
+                        <button class="tab-btn" data-tab="geography">GEOGRAPHY</button>
+                        <button class="tab-btn" data-tab="rankings">RANKINGS</button>
+                    </div>
+                    <div class="lore-content" id="lore-text-area">
+                        <!-- Text injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading-msg" class="fade-in-up">Loading Data...</div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="world_content.js"></script>
+    <script src="world.js"></script>
+</body>
+
+</html>

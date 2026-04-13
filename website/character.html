@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS - Character Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="world-style.css"> <!-- Reusing world styles for glass cards -->
+    <style>
+        /* Character Page Specific Overrides */
+        .character-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .char-name-large {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .char-role-large {
+            color: var(--primary);
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .char-portrait-container {
+            position: relative;
+            height: 500px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+        }
+
+        .char-portrait {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .char-portrait:hover {
+            transform: scale(1.02);
+        }
+
+        .char-stats-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quote-box {
+            font-family: var(--font-jp);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            left: 5px;
+            top: -10px;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
+        }
+
+        .bio-text {
+            font-family: var(--font-jp);
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+        }
+
+        .radar-chart-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        /* Ranking Popup Styles */
+        .ranking-popup {
+            position: fixed;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 350px;
+            max-height: 600px;
+            overflow-y: auto;
+            background: rgba(30, 30, 50, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .ranking-popup.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .ranking-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        .ranking-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .ranking-item.current {
+            background: rgba(110, 142, 251, 0.3);
+            border: 1px solid var(--primary);
+        }
+
+        .ranking-item.top3 {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 140, 0, 0.2));
+        }
+
+        .ranking-rank {
+            font-weight: bold;
+            font-size: 1.1rem;
+            min-width: 40px;
+            color: var(--text-main);
+        }
+
+        .ranking-rank.gold {
+            color: #FFD700;
+        }
+
+        .ranking-rank.silver {
+            color: #C0C0C0;
+        }
+
+        .ranking-rank.bronze {
+            color: #CD7F32;
+        }
+
+        .ranking-name {
+            flex: 1;
+            margin: 0 1rem;
+            color: var(--text-main);
+            font-family: var(--font-jp);
+        }
+
+        .ranking-value {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+
+            .char-portrait-container {
+                height: 400px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .ranking-popup {
+                right: 10px;
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="world-nav glass-card">
+        <a href="index.html#characters" class="back-link">← Return to Characters</a>
+        <h1 class="world-header-title">CHARACTER ARCHIVE</h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="world-container" style="display: block;"> <!-- Block display for single column flow -->
+
+        <div id="character-content" class="fade-in-up">
+            <!-- Content Injected by JS -->
+            <div class="character-header">
+                <h2 class="char-name-large" id="char-name">LOADING...</h2>
+                <p class="char-role-large" id="char-role"></p>
+                <a id="char-link" href="#" target="_blank" class="glass-button"
+                    style="display: none; margin-top: 1rem; text-decoration: none; color: var(--text-main);">Visit
+                    Official Site</a>
+            </div>
+
+            <div class="profile-section">
+                <!-- Left: Image -->
+                <div class="char-portrait-container glass-card">
+                    <img id="char-img" src="" alt="Character Portrait" class="char-portrait">
+                </div>
+
+                <!-- Right: Stats & Bio -->
+                <div class="char-info-wrapper">
+                    <div class="glass-card inner-card" style="height: 100%;">
+                        <div class="quote-box" id="char-quote"></div>
+
+                        <div class="bio-section">
+                            <h3
+                                style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                                PROFILE</h3>
+                            <p class="bio-text" id="char-desc"></p>
+                        </div>
+
+                        <div class="stats-section">
+                            <h3
+                                style="color: var(--secondary); margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                                ABILITIES</h3>
+                            <!-- Simple Stat Bars for now -->
+                            <div class="stat-bars" id="char-stats">
+                                <!-- JS Injected -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="glass-card inner-card" style="padding: 3rem;">
+                <h3 style="color: var(--secondary); margin-bottom: 2rem; font-size: 1.5rem; text-align: center;">HISTORY
+                    & LORE</h3>
+                <div class="lore-content" id="char-history">
+                    <!-- JS Injected -->
+                </div>
+            </div>
+
+        </div>
+
+        <div id="error-msg" class="hidden"
+            style="text-align: center; margin-top: 5rem; font-size: 1.5rem; color: #e74c3c;">
+            Character Not Found
+        </div>
+
+    </div>
+
+    <!-- Ranking Popup -->
+    <div id="ranking-popup" class="ranking-popup">
+        <h4 class="ranking-title" id="ranking-popup-title">Rankings</h4>
+        <div class="ranking-list" id="ranking-list">
+            <!-- Ranking items will be injected here -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="character_content.js"></script>
+    <script src="character.js"></script>
+</body>
+
+</html>

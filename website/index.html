@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS - The Blue Phantom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;500;700&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="glass-header">
+        <nav>
+            <div class="logo">IRIS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#world">World</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content fade-in">
+                <h1 class="glitch" data-text="IRIS">IRIS</h1>
+                <p class="subtitle">闇を裂く、蒼き閃光。</p>
+                <p class="tagline">Water, Wires, and the Darkness of the City.</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <section id="story" class="section">
+            <div class="container">
+                <h2 class="section-title">STORY</h2>
+                <div class="story-actions" style="text-align: right; margin-bottom: 2rem;">
+                    <a href="story.html" class="cyber-btn"
+                        style="text-decoration: none; display: inline-block; border: 1px solid var(--primary); padding: 0.8rem 2rem; color: var(--primary); letter-spacing: 2px;">READ
+                        FULL CHRONICLES →</a>
+                </div>
+                <div class="story-timeline">
+                    <div class="story-card glass-card fade-in-up">
+                        <h3>Episode 1: The Blue Phantom</h3>
+                        <p>
+                            暗黒街の闇に潜む悪を討つため、青きボディスーツに身を包んだエージェント・アイリス。
+                            彼女は「シルバー・ヴェノム」と呼ばれる犯罪組織と、彼らが操る「スライム」兵器、そして「淫紋」の呪いに立ち向かう。
+                            数々の屈辱を乗り越え、彼女はブラックダイスが示す運命を切り裂いていく。
+                        </p>
+                    </div>
+                    <div class="story-card glass-card fade-in-up">
+                        <h3>Episode 2: Alliance & Chaos</h3>
+                        <p>
+                            事態の深刻化を受け、傭兵団「ボグダス・ジャベリン」のミユシャリ、ガレス、そして大企業「ファールージャ」のCOOフィオナが参戦。
+                            「ゴールデン・ヴェノム」という新たな勢力も現れ、ヴァーミリオン市とブルー・ローズを舞台にした抗争は激化する。
+                            アイリスたちは一時的な勝利を収めたかに見えたが……。
+                        </p>
+                    </div>
+                    <div class="story-card glass-card fade-in-up">
+                        <h3>Episode 3: The Betrayal</h3>
+                        <p>
+                            英雄として称えられていたフィオナの裏切り。彼女はミエルテンガ総統マリーナ・ボビンと結託し、
+                            世界統一政府機関「バイタルヘクト（Vital Hect）」の設立を画策していた。
+                            アイリスは捕らえられ、孤島「ピジョン島」へと姿を消す。
+                            表社会ではフィオナの「スパッツ外交」が熱狂的支持を集める一方、裏ではボグダスのセバスチャンとSSレンジのアイクが真実を暴くために動き出す。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="world" class="section">
+            <div class="container">
+                <h2 class="section-title">WORLD</h2>
+                <div class="world-grid">
+                    <!-- Core Crescent Nations -->
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=vermilion'" style="cursor: pointer;">
+                        <h3>Vermilion</h3>
+                        <p>強大な軍事力と第2位の経済を持つ国家。男性主導の強硬な政府と、女性中心の優秀な諜報機関という二面性を持つ。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=blue_rose'" style="cursor: pointer;">
+                        <h3>Blue Rose</h3>
+                        <p>工業地帯と廃墟が混在する街。貧富の差が激しかったが、フィオナの改革により急激な経済成長を遂げている。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=mieltenga'" style="cursor: pointer;">
+                        <h3>Mieltenga</h3>
+                        <p>ファールージャ社を擁する経済大国。総統マリーナ・ボビンの下、V7を主導する。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=ss_range'" style="cursor: pointer;">
+                        <h3>SS Range</h3>
+                        <p>技術力と経済力で世界1位を誇る先進国。トリニティ・アライアンスの一員としてV7に対抗。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=iron_syndicate'" style="cursor: pointer;">
+                        <h3>Iron Syndicate</h3>
+                        <p>軍事偏重の国家。武力による支配を信条とし、V7に加盟している。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=sudom'" style="cursor: pointer;">
+                        <h3>SUDOM</h3>
+                        <p>最強ドミニオン。政府が存在せず、実力のみがすべてのアナーキーな地域。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=crosevia'" style="cursor: pointer;">
+                        <h3>Crosevia</h3>
+                        <p>豊富な資源を誇る国家。首脳カスチーナ・テンペストの下、トリニティ・アライアンスに参加。</p>
+                    </div>
+
+                    <!-- V7 Allied Nations -->
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=augusta'" style="cursor: pointer;">
+                        <h3>Augusta Empire</h3>
+                        <p>古き帝国の伝統を持つV7加盟国。ヴィクトル皇帝が統治する強力な軍事国家。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=falcion'" style="cursor: pointer;">
+                        <h3>Falcion</h3>
+                        <p>技術独占を警戒しつつもV7に加盟。セレナ・ヴァレリア大統領が率いる。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=schtalks'" style="cursor: pointer;">
+                        <h3>Schtalks Federation</h3>
+                        <p>軍事同盟を重視するV7加盟国。ハンス・シュトルム首相の強硬路線で知られる。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=fatima'" style="cursor: pointer;">
+                        <h3>Fatima Federation</h3>
+                        <p>エネルギー資源の安定供給を担うV7加盟国。アリフ・アル＝ファティマ大統領が率いる。</p>
+                    </div>
+
+                    <!-- Special Locations -->
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=pigeon_island'" style="cursor: pointer;">
+                        <h3>Pigeon Island</h3>
+                        <p>孤島に存在する廃墟軍事施設。アルファ・ヴェノムの秘密基地として使用された。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=out_of_crescent'" style="cursor: pointer;">
+                        <h3>Out of Crescent</h3>
+                        <p>クレセント外縁の広大な無法地帯。法が及ばず、犯罪者や亡命者が潜伏する危険地域。</p>
+                    </div>
+                    <div class="world-card glass-card fade-in-up"
+                        onclick="window.location.href='world.html?nation=faruja'" style="cursor: pointer;">
+                        <h3>Faruja Corporation</h3>
+                        <p>世界最大のコングロマリット。ミエルテンガを拠点に世界経済を牛耳る超巨大企業。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="characters" class="section">
+            <div class="container">
+                <h2 class="section-title">CHARACTERS</h2>
+
+                <h3 class="subsection-title">Main Cast</h3>
+                <div class="character-grid" id="main-character-grid">
+                    <!-- Iris -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Iris.png" alt="Iris">
+                        </div>
+                        <div class="char-info">
+                            <h3>IRIS</h3>
+                            <p class="char-role">Vermilion Intel / S+ Agent</p>
+                            <p class="char-desc">水の力を操るS+ランクエージェント。優雅で冷徹、だが誰よりも正義感が強い。</p>
+                        </div>
+                    </div>
+                    <!-- Miyushari -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Miyushari.png" alt="Miyushari">
+                        </div>
+                        <div class="char-info">
+                            <h3>MIYUSHARI</h3>
+                            <p class="char-role">Bogdaz Javelin / Strategist</p>
+                            <p class="char-desc">千里眼の持ち主。明るく奔放だが、その推論能力は天才的。</p>
+                        </div>
+                    </div>
+                    <!-- Gareth -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Gareth.png" alt="Gareth">
+                        </div>
+                        <div class="char-info">
+                            <h3>GARETH</h3>
+                            <p class="char-role">Bogdaz Javelin / Warrior</p>
+                            <p class="char-desc">寡黙な副リーダー。圧倒的な戦闘力で仲間を支える。</p>
+                        </div>
+                    </div>
+                    <!-- Fiona -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Fiona.png" alt="Fiona">
+                        </div>
+                        <div class="char-info">
+                            <h3>FIONA</h3>
+                            <p class="char-role">Faruja COO / Blue Rose Leader</p>
+                            <p class="char-desc">企業戦士であり、ブルー・ローズの新たな支配者。裏で世界統一を目論む。</p>
+                        </div>
+                    </div>
+                    <!-- Ike -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Ike.png" alt="Ike">
+                        </div>
+                        <div class="char-info">
+                            <h3>IKE LOPEZ</h3>
+                            <p class="char-role">SS Range Leader</p>
+                            <p class="char-desc">若き野心家。経済合理性を重視するが、世界の危機に気づき動き出す。</p>
+                        </div>
+                    </div>
+                    <!-- Aina -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Aina.png" alt="Aina">
+                        </div>
+                        <div class="char-info">
+                            <h3>AINA</h3>
+                            <p class="char-role">Bogdaz Javelin / Knight</p>
+                            <p class="char-desc">真面目で高潔な騎士。現在はヴァーミリオン政府の特別顧問。</p>
+                        </div>
+                    </div>
+                    <!-- Mina Eureka -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/ミナ・エウレカ.png" alt="Mina Eureka">
+                        </div>
+                        <div class="char-info">
+                            <h3>MINA EUREKA</h3>
+                            <p class="char-role">Bogdaz Javelin / Psychic</p>
+                            <p class="char-desc">青い髪の超念力使い。強力な力場で敵を拘束する能力を持つボグダス・ジャベリンのメンバー。</p>
+                        </div>
+                    </div>
+                    <!-- Marina Bobin -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Marina.png" alt="Marina Bobin">
+                        </div>
+                        <div class="char-info">
+                            <h3>MARINA BOBIN</h3>
+                            <p class="char-role">Mieltenga Leader</p>
+                            <p class="char-desc">冷徹な独裁者。「Vital Hect」を提唱し、世界支配を狙う黒幕。</p>
+                        </div>
+                    </div>
+                    <!-- Elena -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Elena.png" alt="Elena">
+                        </div>
+                        <div class="char-info">
+                            <h3>ELENA</h3>
+                            <p class="char-role">Vermilion Intel Chief</p>
+                            <p class="char-desc">アイリスの上司。組織の腐敗と世界の変動の中で正義を貫こうとする。</p>
+                        </div>
+                    </div>
+                    <!-- Fariel -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Fariel.png" alt="Fariel">
+                        </div>
+                        <div class="char-info">
+                            <h3>FARIEL</h3>
+                            <p class="char-role">Bogdaz Javelin Sniper</p>
+                            <p class="char-desc">冷静沈着なスナイパー兼分析官。アイリスの大ファン。</p>
+                        </div>
+                    </div>
+                    <!-- Castina Tempest -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Castina.png" alt="Castina Tempest">
+                        </div>
+                        <div class="char-info">
+                            <h3>CASTINA TEMPEST</h3>
+                            <p class="char-role">Crosevia Prime Minister</p>
+                            <p class="char-desc">女性主導の理想を掲げる首相。潔癖な面がある。</p>
+                        </div>
+                    </div>
+                    <!-- Pia Trino -->
+                    <div class="character-card glass-card fade-in-up">
+                        <div class="char-img-wrapper">
+                            <img src="assets/Piatrino.png" alt="Pia Trino">
+                        </div>
+                        <div class="char-info">
+                            <h3>PIA TRINO</h3>
+                            <p class="char-role">Fiona's Aide</p>
+                            <p class="char-desc">フィオナの忠実な側近。眼鏡の奥で常に周囲を観察している。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title mt-5">Key Figures (No Image)</h3>
+                <div class="mini-char-grid">
+                    <div class="mini-char-card glass-card fade-in-up">
+                        <h4>Sebastian Valerius</h4>
+                        <p class="role">Bogdaz Javelin Leader</p>
+                        <p class="desc">冷静沈着なリーダー。フィオナとマリーナの陰謀をいち早く察知する。</p>
+                    </div>
+                    <div class="mini-char-card glass-card fade-in-up">
+                        <h4>Reid Kakizaki</h4>
+                        <p class="role">Iron Syndicate Leader</p>
+                        <p class="desc">力を信奉する武闘派。マリーナの思想に共鳴している。</p>
+                    </div>
+                    <div class="mini-char-card glass-card fade-in-up">
+                        <h4>Yonic</h4>
+                        <p class="role">Blue Rose Commander</p>
+                        <p class="desc">真面目な司令官。フィオナに全幅の信頼を置いている。</p>
+                    </div>
+                    <div class="mini-char-card glass-card fade-in-up">
+                        <h4>Michael Gabrieli</h4>
+                        <p class="role">Faruja CEO</p>
+                        <p class="desc">ファールージャ社のCEO。冷静沈着なビジネスマン。</p>
+                    </div>
+                    <div class="mini-char-card glass-card fade-in-up">
+                        <h4>Yeshivato</h4>
+                        <p class="role">Bogdaz Operative</p>
+                        <p class="desc">明るい性格のボグダスメンバー。SUDOM方面を担当。</p>
+                    </div>
+                    <div class="mini-char-card glass-card fade-in-up">
+                        <h4>Lastman</h4>
+                        <p class="role">Silver Venom Remnant</p>
+                        <p class="desc">シルバー・ヴェノムの残党。卑劣な小悪党。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">GALLERY</h2>
+                <div class="gallery-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Gallery Modal -->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 IRIS Project. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="character_content.js"></script>
+    <script>
+        // Add click events to existing character cards
+        document.addEventListener('DOMContentLoaded', () => {
+            // Map character names to their IDs in character_content.js
+            const charMapping = {
+                'IRIS': 'iris',
+                'MIYUSHARI': 'miyushari',
+                'GARETH': 'gareth',
+                'FIONA': 'fiona',
+                'IKE LOPEZ': 'ike',
+                'AINA': 'aina',
+                'MINA EUREKA': 'mina',
+                'MARINA BOBIN': 'marina',
+                'ELENA': 'elena',
+                'FARIEL': 'fariel',
+                'CASTINA TEMPEST': 'castina',
+                'PIA TRINO': 'piatrino'
+            };
+
+            // Get all character cards
+            const grid = document.getElementById('main-character-grid');
+            if (!grid) return;
+
+            const cards = grid.querySelectorAll('.character-card');
+
+            cards.forEach(card => {
+                const nameElement = card.querySelector('h3');
+                if (!nameElement) return;
+
+                const charName = nameElement.textContent.trim();
+                const charId = charMapping[charName];
+
+                if (charId && characterData[charId]) {
+                    card.style.cursor = 'pointer';
+                    card.onclick = () => window.location.href = `character.html?id=${charId}`;
+
+                    // Add hover effect
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-5px)';
+                        card.style.transition = 'all 0.3s';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0)';
+                    });
+                }
+            });
+
+            // Handle mini character cards (Key Figures without images)
+            const miniCharMapping = {
+                'Marina Bobin': 'marina',
+                'Sebastian Valerius': 'sebastian',
+                'Elena': 'elena',
+                'Reid Kakizaki': 'reid',
+                'Fariel': 'fariel',
+                'Pia Trino': 'piatrino',
+                'Yonic': 'yonic',
+                'Michael Gabrieli': 'michael',
+                'Castina Tempest': 'castina',
+                'Yeshivato': 'yeshivato',
+                'Lastman': 'lastman'
+            };
+
+            const miniCards = document.querySelectorAll('.mini-char-card');
+            miniCards.forEach(card => {
+                const nameElement = card.querySelector('h4');
+                if (!nameElement) return;
+
+                const charName = nameElement.textContent.trim();
+                const charId = miniCharMapping[charName];
+
+                if (charId && characterData[charId]) {
+                    card.style.cursor = 'pointer';
+                    card.onclick = () => window.location.href = `character.html?id=${charId}`;
+
+                    // Add hover effect
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-3px)';
+                        card.style.transition = 'all 0.3s';
+                        card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.5)';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0)';
+                        card.style.boxShadow = '';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

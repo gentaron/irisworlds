@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS - Main Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="story-style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="story-nav glass-card">
+        <a href="index.html" class="back-link">← Return to Main</a>
+        <h1 class="story-header-title">IRIS: CHRONICLES</h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="story-container">
+        <!-- Sidebar -->
+        <aside class="chapter-sidebar glass-card" id="sidebar">
+            <h3>Chapters</h3>
+            <ul id="chapter-list">
+                <li class="active" data-chapter="ch1">第1章: 蒼き幻影</li>
+                <li data-chapter="ch2">第2章: 同盟と混沌</li>
+                <li data-chapter="ch3">第3章: 裏切り</li>
+                <li data-chapter="ch4">第4章: 深淵へ</li>
+                <li data-chapter="ch5">第5章: ヴェノムの影</li>
+                <li data-chapter="ch6">第6章: 救出作戦</li>
+                <li data-chapter="ch7">第7章: 新たな脅威</li>
+                <li data-chapter="ch8">第8章: 女性主導の波</li>
+                <li data-chapter="ch9">第9章: ボグダスの介入</li>
+                <li data-chapter="ch10">第10章: 地下の闇</li>
+                <li data-chapter="ch11">第11章: エロスの罠</li>
+                <li data-chapter="ch12">第12章: 抵抗の意志</li>
+                <li data-chapter="ch13">第13章: ピンチと覚醒</li>
+                <li data-chapter="ch14">第14章: 逆襲の刻</li>
+                <li data-chapter="ch15">第15章: 真実の探求</li>
+                <li data-chapter="ch16">第16章: 統一への道</li>
+                <li data-chapter="ch17">第17章: 陰謀の深化</li>
+                <li data-chapter="ch18">第18章: 決戦前夜</li>
+                <li data-chapter="ch19">第19章: 最終決戦</li>
+                <li data-chapter="ch20">第20章: 新世界の夜明け</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="chapter-content glass-card" id="content-area">
+            <h2 id="chapter-title" class="fade-in-up">Loading...</h2>
+            <div id="chapter-text" class="story-text-content fade-in-up">
+                <!-- Text Injected Here -->
+            </div>
+
+            <div class="quiz-trigger-section fade-in-up">
+                <button id="start-quiz-btn" class="cyber-btn">Take Chapter Quiz</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content glass-card quiz-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="quiz-title">Chapter Quiz</h2>
+            <div id="quiz-questions">
+                <!-- Questions Injected Here -->
+            </div>
+            <div id="quiz-result" class="hidden">
+                <h3>Result</h3>
+                <p id="result-message"></p>
+                <button id="retry-btn" class="cyber-btn small hidden">Retry</button>
+            </div>
+            <div class="quiz-footer">
+                <button id="submit-quiz" class="cyber-btn">Submit Answers</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="story_content.js"></script>
+    <script src="story.js"></script>
+</body>
+
+</html>
