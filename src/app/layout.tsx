@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Navigation } from "./navigation"
 import { Footer } from "@/components/Footer"
+import { MarketTicker } from "@/platform/market-ticker"
 
 export const metadata: Metadata = {
   title: "Iris Worlds",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning className="dark">
       <body className="antialiased flex min-h-screen flex-col bg-background text-foreground">
+        <MarketTicker />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
